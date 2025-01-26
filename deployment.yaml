@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ml-model-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ml-model
+  template:
+    metadata:
+      labels:
+        app: ml-model
+    spec:
+      containers:
+      - name: ml-model
+        image: megha456/flask-model-app:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5000
+      imagePullSecrets:
+      
+      - name: myregistrysecret
