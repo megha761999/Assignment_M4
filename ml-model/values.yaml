@@ -1,0 +1,22 @@
+replicaCount: 3
+service:
+  port: 80
+serviceAccount:
+  create: true 
+
+ingress:
+  enabled: true   # Set to true if you want to create an ingress, or false to disable it
+
+autoscaling:
+  enabled: true   # Set to true if you want to enable autoscaling, or false to disable it
+
+image:
+  repository: megha456/flask-model-app
+  tag: latest
+autoscaling:
+  enabled: true
+  minReplicas: 1   # Set a minimum number of replicas
+  maxReplicas: 3   # Set a maximum number of replicas
+ingress:
+  enabled: true
+  annotations: {}

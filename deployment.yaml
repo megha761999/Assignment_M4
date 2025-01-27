@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: ml-model
-        image: megha456/flask-model-app:latest
+        image: myregistryml.azurecr.io/flask-model-app:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
